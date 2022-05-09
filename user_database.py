@@ -7,7 +7,7 @@ def saveUser(Id, nome, username):
     #cursor.execute(table) 
     
     QUERY = 'INSERT or IGNORE INTO users (Id, Nome, Username) VALUES (?, ?, ?)'
-    data_tuple = (Id, nome, '@'+username)
+    data_tuple = (Id, nome, username)
 
     cursor.execute(QUERY, data_tuple)
     conexao.commit()
@@ -51,5 +51,5 @@ def deleteTask(userId, task):
 
     cursor.close()
     conexao.close()
-    return False
+
 
